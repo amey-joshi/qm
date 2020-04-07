@@ -196,9 +196,9 @@ The measure of the integral becomes
 \begin{equation}\label{s3e15}
 dV_1 dV_2 = \frac{a_0^6}{64 Z^{\prime 6}}\rho_1^2\sin\vartheta_1d\rho_1 d\varphi_1 d\vartheta_1\rho_2^2\sin\vartheta_2d\rho_2 d\varphi_2 d\vartheta_2.
 \end{equation}
-The third term of equation \eqref{s3e13} thus becomes
+The third term of equation \eqref{s3e13} thus becomes $T_3 = $
 \begin{equation}\label{s3e16}
-T_3 = \int_0^\infty \int_0^\pi \int_0^{2\pi}\frac{Z^\prime e^2}{32\pi^2 a_0}\frac{e^{-\rho_1 - \rho_2}}{\rho_{12}}\rho_1^2\sin\vartheta_1\rho_2^2\sin\vartheta_2 
+T_3 = \int_0^\infty\int_0^\pi\int_0^{2\pi}\int_0^\infty\int_0^\pi\int_0^{2\pi}\frac{Z^\prime e^2}{32\pi^2 a_0}\frac{e^{-\rho_1 - \rho_2}}{\rho_{12}}\rho_1^2\sin\vartheta_1\rho_2^2\sin\vartheta_2 
 d\rho_1d\varphi_1d\vartheta_1 d\rho_2d\varphi_2d\vartheta_2
 \end{equation}
 The angular integrals can be readily evaluated so that
@@ -250,4 +250,61 @@ E_{\text{min}} = -2\left(Z - \frac{5}{16}\right)^2W_H.
 For Helium aton $Z = 2$. $W_H$ is always $-13.6$ eV. Therefore, $E_{\text{min}} 
 = -77.45625$ eV. The actual energy level is $-79.00515$ eV. Our estimate is
 $2\%$ off the actual value.
+
+\section{Upper and lower bounds}\label{s4}
+Equation \eqref{s2e4} gives an upper bound for the energy eigenvalue of the ground
+state. However, to get a good feel of what $E$ is we also need a lower bound. The 
+theory to get the lower bound was available since the 1930s through the work of D.
+H. Weinstein. We will describe it in this section. Once again let $\phi$ be a
+variational function as defined in section \ref{s2}. Define the quantities
+\begin{eqnarray}
+E &=& \int\phi^\ast\hat{H}\phi dV \label{s4e1} \\
+D &=& \int \left(\hat{H}\phi\right)^\ast \hat{H}\phi dV \label{s4e2}
+\end{eqnarray}
+If we expand $\phi$ in terms of the eigenfunctions $\psi_n$ of $\hat{H}$ as we
+did previously in equation \eqref{s2e2}, we get
+\begin{eqnarray}
+E &=& \sum_{n \ge 0}|a_n|^2W_n \label{s4e3} \\
+D &=& \sum_{n \ge 0}|a_n|^2W_n^2 \label{s4e4}
+\end{eqnarray}
+Let
+\begin{equation}\label{s4e5}
+\Delta = D - E^2.
+\end{equation}
+We manipulate the right hand side of the above equation as
+\[
+\Delta = D - 2E^2 + E^2 = D - 2EE + E^2 \cdot 1 = \sum_{n \ge 0}|a_n|^2W_n^2 
+-2E\sum_{n \ge 0}|a_n|^2W_n + E^2\sum_{n \ge 0}|a_n|^2,
+\]
+where we have used the fact that $\phi$ is normalized so that
+\[
+\sum_{n \ge o}|a_n|^2 = 1.
+\]
+We can now write
+\begin{equation}\label{s4e6}
+\Delta = \sum_{n \ge 0} |a_n|^2(W_n - E)^2.
+\end{equation}
+Among all the energy levels in the spectrum of $\hat{H}$ there will be one, say
+$W_k$ that will be closest to $E$. Then $(W_k - E)^2 \le (W_n - E)^2$. Therefore,
+equation \eqref{s4e6} becomes
+\[
+\Delta \ge (W_k - E)^2.
+\]
+Of the two possibilities $W_k \ge E$ and $W_k < E$, the first one gives
+\begin{equation}\label{s4e7}
+E + \sqrt{\Delta} \ge W_k \ge E
+\end{equation}
+while the second one gives
+\begin{equation}\label{s4e8}
+E > W_k > E - \sqrt{\Delta}.
+\end{equation}
+We can combine equations \eqref{s4e7} and \eqref{s4e8} to get
+\[
+E - \sqrt{\Delta} \le W_k \le E + \sqrt{\Delta}.
+\]
+Using the definition of $\Delta$ from equation \eqref{s4e5} we get
+\begin{equation}\label{s4e9}
+E - \sqrt{D - E^2} \le W_k \le E + \sqrt{D - E^2}.
+\end{equation}
+This equation gives an interval in which the energy level closest to $E$ lies.
 \end{document}
