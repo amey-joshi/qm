@@ -198,7 +198,7 @@ dV_1 dV_2 = \frac{a_0^6}{64 Z^{\prime 6}}\rho_1^2\sin\vartheta_1d\rho_1 d\varphi
 \end{equation}
 The third term of equation \eqref{s3e13} thus becomes $T_3 = $
 \begin{equation}\label{s3e16}
-T_3 = \int_0^\infty\int_0^\pi\int_0^{2\pi}\int_0^\infty\int_0^\pi\int_0^{2\pi}\frac{Z^\prime e^2}{32\pi^2 a_0}\frac{e^{-\rho_1 - \rho_2}}{\rho_{12}}\rho_1^2\sin\vartheta_1\rho_2^2\sin\vartheta_2 
+\int_0^\infty\int_0^\pi\int_0^{2\pi}\int_0^\infty\int_0^\pi\int_0^{2\pi}\frac{Z^\prime e^2}{32\pi^2 a_0}\frac{e^{-\rho_1 - \rho_2}}{\rho_{12}}\rho_1^2\sin\vartheta_1\rho_2^2\sin\vartheta_2 
 d\rho_1d\varphi_1d\vartheta_1 d\rho_2d\varphi_2d\vartheta_2
 \end{equation}
 The angular integrals can be readily evaluated so that
@@ -306,5 +306,172 @@ Using the definition of $\Delta$ from equation \eqref{s4e5} we get
 \begin{equation}\label{s4e9}
 E - \sqrt{D - E^2} \le W_k \le E + \sqrt{D - E^2}.
 \end{equation}
-This equation gives an interval in which the energy level closest to $E$ lies.
+This equation gives an interval in which the energy level closest to $E$ 
+lies.
+
+\section{Examples of bounds}\label{s5}
+We now consider a few problems where we calculate the upper and lower
+bounds. We begin with problems whose exact solution is known just to
+illustrate the method applied to simple problems.
+\subsection{Harmonic oscillator}
+The Hamiltonian is
+\begin{equation}\label{s5e1}
+\hat{H} = -\frac{\hslash^2}{2m}\frac{d}{dx^2} + \frac{1}{2}m\omega^2x^2,
+\end{equation}
+where $m$ is the mass of the particle and it is subject to a restoring
+force $F = -m\omega^2 x$. Let us begin with a trial function
+\begin{equation}\label{s5e2}
+\phi(x;\alpha) = Ne^{-\alpha x^2},
+\end{equation}
+where $\alpha$ is an unknown constant and $N$ is the normalization constant.
+The function $\phi$ is indeed a well-behaved function that can be a wave 
+function of a physical system. The normalization constant can be easily
+found to be
+\[
+N = \left(\frac{2\alpha}{\pi}\right)^{1/4}
+\]
+so that the normalized trial function is
+\begin{equation}\label{s5e3}
+\phi(x;\alpha) = \left(\frac{2\alpha}{\pi}\right)^{1/4}e^{-\alpha x^2}.
+\end{equation}
+We next calculate
+\begin{equation}\label{s5e4}
+\hat{H}\phi = \left(\frac{2\alpha}{\pi}\right)^{1/4}\left(\frac{\hslash^2
+\alpha}{m}e^{-\alpha x^2} + \left(\frac{m\omega^2x^2}{2} - \frac{2\hslash^2
+\alpha^2}{m}\right)x^2e^{-\alpha x^2}\right)
+\end{equation}
+and 
+\begin{equation}\label{s5e5}
+E(\alpha) = \langle\hat{H}\rangle = \frac{\alpha\hslash^2}{2m} + 
+\frac{m\omega^2}{8\alpha}.
+\end{equation}
+The extreme value of $E$ can be found by setting $E^\prime(\alpha) = 0$. It
+occurs at
+\begin{equation}\label{s5e6}
+\alpha_0 = \pm\frac{m\omega}{2\hslash}.
+\end{equation}
+The minimum $E$ is
+\begin{equation}\label{s5e7}
+E = \frac{1}{2}\hslash\omega
+\end{equation}
+and the function $\phi$ for this choice of $\alpha$ is
+\begin{equation}\label{s5e8}
+\phi(x;\alpha_0) = \left(\frac{2m\omega}{h}\right)^{1/4}\exp
+\left(-\frac{1}{2}\frac{m\omega}{\hslash}x^2\right).
+\end{equation}
+Let us pretend that we do not know that equation \eqref{s5e7} is indeed
+the energy of the ground state. In order to find out how far away we are
+from the true ground state energy, we need to compute $\sqrt{D - E^2}$,
+where the quantity $D$ is defined by equation \eqref{s4e2}. In order to
+calculate $D$, we first note that, for the $\phi$ given by equation
+\eqref{s5e8},
+\begin{equation}\label{s5e9}
+\hat{H}\phi = \frac{1}{2}\hslash\omega
+\end{equation}
+so that
+\begin{equation}\label{s5e10}
+D = \frac{1}{4}\hslash^2\omega^2
+\end{equation}
+and
+\begin{equation}\label{s5e11}
+\sqrt{D - E^2} = 0.
+\end{equation}
+Thus, the energy $E$ computed in equation \eqref{s5e7} is the true ground
+state energy of the harmomic oscillator and the corresponding trial function
+of equation \eqref{s5e8} is the ground state eigenfunction.
+
+\subsection{Particle in an infinite potential well}
+The potential energy of the particle is
+\begin{equation}\label{s5e12}
+V(x) = \begin{cases}
+0 & |x| < a \\
+\infty & |x| \ge a.
+\end{cases}
+\end{equation}
+The Hamiltonian in the well is
+\begin{equation}\label{s5e13}
+\hat{H} = -\frac{\hslash^2}{2m}\frac{d^2}{dx^2}.
+\end{equation}
+Although this is a trivial problem, let us pretend that we do not know
+its solution and begin with a trial function
+\begin{equation}\label{s5e14}
+\phi(x;\alpha) = \begin{cases}
+N(a^2 - x^2)(1 + \alpha x^2) & |x| < a \\
+0 & |x| \ge a,
+\end{cases}
+\end{equation}
+where $N$ is the normalization constant. We observe that $\phi$ is indeed a 
+permissible wavefunction. The normalization constant is
+\begin{equation}\label{s5e15}
+N = \sqrt{\frac{315}{16 a^5(a^4\alpha^2 + 6a^2\alpha + 21)}}
+\end{equation}
+and
+\begin{equation}\label{s5e16}
+E(\alpha) = \int_{-\infty}^\infty \phi^\ast\hat{H}\phi dx = 
+N^2 \left(-\frac{\hslash^2}{2m}\right)\left(-\frac{8a^3}{105}\right)
+(11a^4\alpha^2 + 14a^2\alpha + 35)
+\end{equation}
+or
+\begin{equation}\label{s5e17}
+E(\alpha) = \frac{3\hslash^2}{4ma^2}
+\left(\frac{11a^4\alpha^2+14a^2\alpha+35}{a^4\alpha^2+6a^2\alpha+21}\right).
+\end{equation}
+In order to get the extremum of $E$, we find it first derivative.
+\begin{equation}\label{s5e18}
+\frac{dE}{d\alpha} = \frac{3\hslash^2}{m}
+\frac{13a^4\alpha^2 + 98 a^2\alpha + 21}{(a^4\alpha^2+6a^2\alpha+21)^2}.
+\end{equation}
+The condition for an extremum is
+\begin{equation}\label{s5e19}
+13a^2\alpha^2 + 98 a^2\alpha + 21 = 0
+\end{equation}
+or
+\begin{equation}\label{s5e20}
+\alpha = \frac{-98 \pm \sqrt{8512}}{26a^2}.
+\end{equation}
+We find it more convenient to express the roots as
+\begin{eqnarray}
+a^2\alpha_1 &=& -0.2207 \label{s5e21} \\
+a^2\alpha_2 &=& -7.3177 \label{s5e22}
+\end{eqnarray}
+The normalization constants corresponding to these roots are
+\begin{eqnarray}
+N_1 &=& 0.9906 a^{-5/2} \label{s5e23} \\
+N_2 &=& 0.8016 a^{-5/2} \label{s5e24}
+\end{eqnarray}
+and the values of $E$ are
+\begin{eqnarray}
+E(\alpha_1) &=& 1.2337187\frac{\hslash^2}{ma^2} \label{s5e25} \\
+E(\alpha_2) &=& 12.7662813\frac{\hslash^2}{ma^2} \label{s5e26}
+\end{eqnarray}
+The quantity $D$ is
+\begin{equation}\label{s5e27}
+D = N^2\frac{\hslash^4}{m^2}\int_{-a}^a(6\alpha x^2 + 1 - a^2\alpha)^2dx
+= N^2\frac{\hslash^4a}{m^2}\left(\frac{42a^4\alpha^2}{5} + 4a^2\alpha + 2
+\right).
+\end{equation}
+The two values of $D$ corresponding to the two roots are
+\begin{eqnarray}
+D(\alpha_1) &=& 1.5234874\frac{\hslash^2}{m^2a^4} \label{s5e28} \\
+D(\alpha_2) &=& 271.4765067\frac{\hslash^2}{m^2a^4} \label{s5e29}.
+\end{eqnarray}
+We can now compute the energy bounds corresponding to the two roots as
+\begin{eqnarray}
+\Delta(\alpha_1) &=& 0.0378488\frac{\hslash^2}{ma^2} \label{s5e30} \\
+\Delta(\alpha_2) &=& 10.41626456\frac{\hslash^2}{ma^2} \label{s5e31}
+\end{eqnarray}
+Although we have computed $E$, $D$ and $\Delta$ for both roots, we know that
+the ground state corresponds to $\alpha_1$. From equations \eqref{s5e25}
+and \eqref{s5e30} we conclude that the true ground state energy $E_0$
+is bounded by
+\begin{equation}\label{s5e32}
+1.1958699\frac{\hslash^2}{ma^2} \le E_0 \le 1.2715675\frac{\hslash^2}{ma^2}.
+\end{equation}
+We know that the true ground state energy is
+\begin{equation}\label{s5e33}
+E_0 = \frac{\hslash^2}{8ma^2}\pi^2 = 1.2337005\frac{\hslash^2}{ma^2}.
+\end{equation}
+In percentage terms, we have found the ground state energy to within $3.07
+\%$ of the true value.
+
 \end{document}
