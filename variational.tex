@@ -313,7 +313,7 @@ lies.
 We now consider a few problems where we calculate the upper and lower
 bounds. We begin with problems whose exact solution is known just to
 illustrate the method applied to simple problems.
-\subsection{Harmonic oscillator}
+\subsection{The harmonic oscillator}
 The Hamiltonian is
 \begin{equation}\label{s5e1}
 \hat{H} = -\frac{\hslash^2}{2m}\frac{d}{dx^2} + \frac{1}{2}m\omega^2x^2,
@@ -380,7 +380,7 @@ Thus, the energy $E$ computed in equation \eqref{s5e7} is the true ground
 state energy of the harmomic oscillator and the corresponding trial function
 of equation \eqref{s5e8} is the ground state eigenfunction.
 
-\subsection{Particle in an infinite potential well}
+\subsection{A particle in an infinite potential well}
 The potential energy of the particle is
 \begin{equation}\label{s5e12}
 V(x) = \begin{cases}
@@ -474,7 +474,7 @@ E_0 = \frac{\hslash^2}{8ma^2}\pi^2 = 1.2337005\frac{\hslash^2}{ma^2}.
 In percentage terms, we have found the ground state energy to within $3.07
 \%$ of the true value.
 
-\subsection{Hydrogen atom}
+\subsection{The Hydrogen atom}
 The Hamiltonian is
 \begin{equation}\label{s5e34}
 \hat{H} = -\frac{\hslash^2}{2m}\nabla^2 - \frac{e^2}{r}.
@@ -539,15 +539,46 @@ Therefore,
 \end{equation}
 From equations \eqref{s5e38} and \eqref{s5e39} we infer that
 \begin{equation}\label{s5e40}
-E(\alpha) = \frac{5\hslash^2}{m\alpha^2} - \frac{15e^2}{6\alpha}.
+E(\alpha) = \frac{5\hslash^2}{m\alpha^2} - \frac{5e^2}{2\alpha}.
 \end{equation}
 The extremum of this function is at
 \begin{equation}\label{s5e41}
-\alpha = \frac{4\hslash^2}{me^2}.
+\alpha_0 = \frac{4\hslash^2}{me^2}.
 \end{equation}
 The trial function is then
 \begin{equation}\label{s5e42}
-\phi(r) = \sqrt{\frac{15}{2\pi}}\frac{1}{\alpha^{3/2}}\left(1 - 
-\frac{me^2}{4\hslash^2}r\right).
+\phi(r) = \sqrt{\frac{15}{2\pi}}\frac{1}{\alpha_0^{3/2}}\left(1 - 
+\frac{r}{\alpha_0}\right)
 \end{equation}
+and
+\begin{equation}\label{s5e43}
+E(\alpha_0) = -\frac{5}{16}\frac{me^4}{\hslash^4}.
+\end{equation}
+
+We will now find $D(\alpha_0)$. It is
+\begin{equation}\label{s5e44}
+\int_{-\infty}^\infty |\hat{H}\phi|^2dV = 
+\frac{30}{\alpha_0^3}\int_0^\alpha\left(1 - \frac{r}{\alpha_0}\right)^2
+r^2dr = \frac{30}{16}.\frac{106}{96}.\frac{m^2e^8}{\hslash^2}.
+\end{equation}
+
+The bounds to the variational calculation need
+\[
+\Delta^2 = D(\alpha_0) - E^2(\alpha_0) = \frac{505}{256}\frac{m^2e^8}
+{\hslash^2}.
+\]
+The true ground state energy $E_0$ is thus
+\begin{equation}\label{s5e45}
+-\frac{5 + \sqrt{505}}{16}\frac{me^4}{\hslash^2} \le E_0 \le
+\frac{-5 + \sqrt{505}}{16}\frac{me^4}{\hslash^2} 
+\end{equation}
+or
+\begin{equation}\label{s5e46}
+-1.7170\frac{me^4}{\hslash^2} \le E_0 \le 1.092\frac{me^4}{\hslash^2}.
+\end{equation}
+The true energy is
+\begin{equation}\label{s5e47}
+E_0 = -\frac{1}{8}\frac{m\hslash^2}{e^4}.
+\end{equation}
+
 \end{document}
