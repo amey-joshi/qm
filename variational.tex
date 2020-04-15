@@ -581,4 +581,259 @@ The true energy is
 E_0 = -\frac{1}{8}\frac{m\hslash^2}{e^4}.
 \end{equation}
 
+\subsection{Helium like atoms}
+The Hamiltonian in this cases is
+\begin{equation}\label{s5e48}
+\hat{H} = -\frac{\hslash^2}{2m}\left(\nabla_1^2 + \nabla_2^2\right) -
+\frac{Ze^2}{r_1} - \frac{Ze^2}{r_2} + \frac{e^2}{r_{12}},
+\end{equation}
+where $m$ is the mass of the electron, $r_1$ is the distance of the first
+electron from the nucleus, $r_2$ that of the second electron from the 
+nucleus and $r_{12}$ is the distance between the two electrons. $Z$ is the
+number of protons in the nucleus. $Z = 2$ for He atom, $3$ for Li$^+$ ion
+and $4$ for Be$^{++}$ ion. We have partially solved this problem in section
+\ref{s3}. We will sketch that part of the solution here before proceeding
+to find the bounds of the variational estimate.
+
+The trial wave function is
+\begin{equation}\label{s5e49}
+\phi(\vec{x}_1, \vec{x}_2) = \frac{\alpha^3}{\pi a_0^3}
+\exp\left(-\frac{\alpha}{a_0}(r_1 + r_2)\right),
+\end{equation}
+where $a_0$ is the radius of the first Bohr orbit of the Hydrogen atom
+and $\alpha$ is the variational parameter. We had used $Z^\prime$ in place
+of $\alpha$ in section \ref{s3}. We prefer to use $\alpha$ here for sake
+of consistency with the other examples. The trial function is a product of
+\begin{eqnarray}
+\phi_1(\vec{x}_1) &=& \left(\frac{\alpha^{3}}{\pi a_0^3}\right)^{1/2}
+\exp\left(-\frac{\alpha r_1}{a_0}\right) \label{s5e50} \\
+\phi_2(\vec{x}_2) &=& \left(\frac{\alpha^{3}}{\pi a_0^3}\right)^{1/2}
+\exp\left(-\frac{\alpha r_2}{a_0}\right) \label{s5e51}
+\end{eqnarray}
+$\phi_1$ and $\phi_2$ are eigenfunctions of the hydrogenic Hamiltonians 
+with atomic number $\alpha e$. That is,
+\begin{eqnarray}
+-\frac{\hslash^2}{2m}\nabla_1^2\phi_1 - \frac{\alpha e^2}{r_1} &=& 
+-\alpha^2W_H\phi_1 \label{s5e52} \\
+-\frac{\hslash^2}{2m}\nabla_2^2\phi_2 - \frac{\alpha e^2}{r_2} &=& 
+-\alpha^2W_H\phi_2 \label{s5e53}, 
+\end{eqnarray}
+where 
+\begin{equation}\label{s5e54}
+W_H = \frac{e^2}{2a_0}.
+\end{equation}
+Following the steps outlined in section \ref{s3} we get
+\begin{equation}\label{s5e55}
+E(\alpha) = 
+\left(-2\alpha^2 + 4\alpha(\alpha - Z) + \frac{5}{4}\alpha\right)W_H
+\end{equation}
+The extremum of this function occurs are
+\begin{equation}\label{s5e56}
+\alpha_0 = Z - \frac{5}{16}
+\end{equation}
+and
+\begin{equation}\label{s5e57}
+E(\alpha_0) = -2\left(Z - \frac{5}{16}\right)^2 W_H.
+\end{equation}
+In order to get bounds on the energy estimate, we need to compute
+$D(\alpha)$ defined by equation \eqref{s4e2}
+\[
+D(\alpha) = \int_{-\infty}^\infty \int_{-\infty}^\infty 
+|\hat{H}\phi|^2 dV_1 dV_2,
+\]
+where $dV_1$ and $dV_2$ are the volume elements in $\vec{x}_1$ and 
+$\vec{x}_2$ coordinates. From equation \eqref{s3e11},
+\[
+\hat{H}\phi = -2\alpha^2W_H\phi + (\alpha - Z)e^2\left(\frac{1}{r_1}
++ \frac{1}{r_2}\right)\phi + \frac{e^2}{r_{12}}\phi.
+\]
+Define the constants
+\begin{eqnarray}
+A &=& -2\alpha^2 W_H \label{s5e58} \\
+B &=& (\alpha - Z) e^2 \label{s5e59} \\
+C &=& e^2 \label{s5e60}
+\end{eqnarray}
+so that
+\begin{equation}\label{s5e61}
+\hat{H}\phi = A\phi + B\left(\frac{1}{r_1} + \frac{1}{r_2}\right)\phi +
+\frac{C}{r_{12}}\phi
+\end{equation}
+and
+\begin{eqnarray*}
+|\hat{H}\phi|^2 &=& A^2|\phi|^2 + B^2\left(\frac{1}{r_1^2} + 
+  \frac{1}{r_2^2} + \frac{2}{r_1r_2}\right)|\phi|^2 + \\
+  & & \frac{C^2}{r_{12}^2}|\phi|^2 + 2AB\left(\frac{1}{r_1}+\frac{1}{r_2}
+  \right)|\phi|^2 + 2\frac{AC}{r_{12}}|\phi|^2 + \\
+  & & 2BC\left(\frac{1}{r_1r_{12}} + \frac{1}{r_2r_{12}}\right)|\phi|^2.
+\end{eqnarray*}
+In order to calculate $D$ we need to evaluate the following integrals.
+\begin{eqnarray}
+I_1 &=& \int_{-\infty}^\infty\int_{-\infty}^\infty |\phi|^2 dV_1 dV_2 
+        \label{s5e62} \\
+I_2 &=& \int_{-\infty}^\infty\int_{-\infty}^\infty\frac{|\phi|^2}{r_1^2}
+        dV_1dV_2\label{s5e63}\\
+I_3 &=& \int_{-\infty}^\infty\int_{-\infty}^\infty\frac{|\phi|^2}{r_2^2}
+        dV_1dV_2\label{s5e64}\\
+I_4 &=& \int_{-\infty}^\infty\int_{-\infty}^\infty\frac{|\phi|^2}{r_1r_2}
+        dV_1dV_2\label{s5e65}\\
+I_5 &=& \int_{-\infty}^\infty\int_{-\infty}^\infty\frac{|\phi|^2}{r_{12}^2}
+        dV_1dV_2\label{s5e66}\\
+I_6 &=& \int_{-\infty}^\infty\int_{-\infty}^\infty\frac{|\phi|^2}{r_1}
+        dV_1dV_2\label{s5e67}\\
+I_7 &=& \int_{-\infty}^\infty\int_{-\infty}^\infty\frac{|\phi|^2}{r_2}
+        dV_1dV_2\label{s5e68}\\
+I_8 &=& \int_{-\infty}^\infty\int_{-\infty}^\infty\frac{|\phi|^2}{r_{12}}
+        dV_1dV_2\label{s5e69}\\
+I_9 &=& \int_{-\infty}^\infty\int_{-\infty}^\infty\frac{|\phi|^2}
+        {r_1r_{12}}dV_1dV_2 \label{s5e70}\\
+I_9 &=& \int_{-\infty}^\infty\int_{-\infty}^\infty\frac{|\phi|^2}
+        {r_2r_{12}}dV_1dV_2 \label{s5e71}
+\end{eqnarray}
+
+We will now compute each of these integrals. We first note that
+\[
+|\phi|^2 = 
+\frac{\alpha^6}{\pi^2 a_0^6}\exp\left(-\frac{2\alpha}{a_0}(r_1+r_2)\right)
+= \frac{\alpha^6}{\pi^2 a_0^6}\exp\left(-\frac{2\alpha}{a_0}r_1\right)
+\exp\left(-\frac{2\alpha}{a_0}r_2\right)  
+\]
+Thus,
+\begin{eqnarray*}
+I_1 &=& \frac{\alpha^6}{\pi^2 a_0^6}
+\int_0^\infty\int_0^{2\pi}\int_0^\pi\exp\left(-\frac{2\alpha}{a_0}r_1\right)
+r_1^2dr_1\sin\theta_1d\theta_1d\varphi_1 \\
+ & & 
+\int_0^\infty\int_0^{2\pi}\int_0^\pi\exp\left(-\frac{2\alpha}{a_0}r_2\right)
+r_2^2dr_2\sin\theta_2d\theta_2d\varphi_2 \\
+ &=& \frac{\alpha^6}{\pi^2 a_0^6}\cdot 16\pi^2 \cdot
+ \int_0^\infty\exp\left(-\frac{2\alpha}{a_0}r_1\right)r_1^2dr_1 \\
+ & & \int_0^\infty\exp\left(-\frac{2\alpha}{a_0}r_2\right)r_2^2dr_2 
+\end{eqnarray*}
+Using equation \eqref{a1e1},
+\[
+I_1 = \frac{\alpha^6}{\pi^2 a_0^6}\cdot 16\pi^2 \cdot
+ \frac{2a_0^3}{8\alpha^3}\frac{2a_0^3}{8\alpha^3}
+\]
+or
+\begin{equation}\label{s5e72}
+I_1 = 1.
+\end{equation}
+
+We now go to $I_2$.
+\begin{eqnarray*}
+I_2 &=& \frac{\alpha^6}{\pi^2 a_0^6}
+\int_0^\infty\int_0^{2\pi}\int_0^\pi
+\frac{1}{r_1^2}\exp\left(-\frac{2\alpha}{a_0}r_1\right)
+r_1^2dr_1\sin\theta_1d\theta_1d\varphi_1 \\
+ & & 
+\int_0^\infty\int_0^{2\pi}\int_0^\pi\exp\left(-\frac{2\alpha}{a_0}r_2\right)
+r_2^2dr_2\sin\theta_2d\theta_2d\varphi_2 \\
+ &=& \frac{\alpha^6}{\pi^2 a_0^6}\cdot 16\pi^2 \cdot
+ \int_0^\infty\exp\left(-\frac{2\alpha}{a_0}r_1\right)dr_1 
+ \int_0^\infty\exp\left(-\frac{2\alpha}{a_0}r_2\right)r_2^2dr_2 
+\end{eqnarray*}
+Using equation \eqref{a1e1} and \eqref{a1e2}
+\[
+I_2 = \frac{\alpha^6}{\pi^2 a_0^6}\cdot 16\pi^2 \cdot \frac{a_0}{2\alpha}
+\cdot \frac{2a_0^3}{8\alpha^3}.
+\]
+Thus,
+\begin{equation}\label{s5e73}
+I_2 = \frac{2\alpha^2}{a_0^2}.
+\end{equation}
+
+$I_3$ is similar to $I_2$ except for an interchange of $r_1$ and $r_2$ so
+that
+\begin{equation}\label{s5e74}
+I_3 = \frac{2\alpha^2}{a_0^2}.
+\end{equation}
+
+Moving to $I_4$,
+\begin{eqnarray*}
+I_4 &=& \frac{\alpha^6}{\pi^2 a_0^6}
+\int_0^\infty\int_0^{2\pi}\int_0^\pi
+\frac{1}{r_1}\exp\left(-\frac{2\alpha}{a_0}r_1\right)
+r_1^2dr_1\sin\theta_1d\theta_1d\varphi_1 \\
+ & & 
+\int_0^\infty\int_0^{2\pi}\int_0^\pi
+\frac{1}{r_2}\exp\left(-\frac{2\alpha}{a_0}r_2\right)
+r_2^2dr_2\sin\theta_2d\theta_2d\varphi_2 \\
+&=& \frac{\alpha^6}{\pi^2 a_0^6} \cdot 16\pi^2 \cdot
+\int_0^\infty r_1\exp\left(-\frac{2\alpha}{a_0}r_1\right)dr_1
+\int_0^\infty r_2\exp\left(-\frac{2\alpha}{a_0}r_2\right)dr_2 \\
+&=& \frac{\alpha^6}{\pi^2 a_0^6} \cdot 16\pi^2 \cdot
+\frac{a_0^2}{4\alpha^2}\frac{a_0^2}{4\alpha^2}
+\end{eqnarray*}
+Thus,
+\begin{equation}\label{s5e75}
+I_4 = \frac{\alpha^2}{a_0^2}.
+\end{equation}
+
+
+\section{Some standard integrals}\label{a}
+Consider
+\[
+I = \int_0^\infty x^2 e^{-Kx}dx = x^2\frac{e^{-Kx}}{-K}\Big|_0^\infty -
+\int_0^\infty\frac{e^{-Kx}}{-K}2xdx = \frac{2}{K}\int_0^\infty xe^{-Kx}dx
+\]
+or
+\[
+I = \frac{2}{K}x\frac{e^{-Kx}}{-K}\Big|_0^\infty - \frac{2}{K}\int_0^\infty
+\frac{e^{-Kx}}{-K}dx = \frac{2}{K^2}\int_0^\infty e^{-Kx}dx = 
+\frac{2}{K^2}\frac{e^{-Kx}}{-K}\Big|_0^\infty = \frac{2}{K^3}.
+\]
+Thus,
+\begin{equation}\label{a1e1}
+\int_0^\infty x^2 e^{-Kx}dx = \frac{2}{K^3}.
+\end{equation}
+
+Now consider
+\[
+I = \int_0^\infty e^{-Kx}dx = \frac{e^{-Kx}}{-K}\Big|_0^\infty.
+\]
+so that
+\begin{equation}\label{a1e2}
+\int_0^\infty e^{-Kx}dx = \frac{1}{K}
+\end{equation}
+
+Let
+\begin{equation}\label{a1e3}
+I = \int_0^\infty xe^{-Kx}dx = x\frac{e^{-K}x}{-K}\Big|_0^\infty -
+\int_0^\infty\frac{e^{-Kx}}{-K}dx = \frac{1}{K}\frac{e^{-Kx}}{-K}
+\Big|_0^\infty = \frac{1}{K^2}.
+\end{equation}
+
+Now consider the following series of integrals.
+\begin{equation}\label{a1e4}
+J_n = \int_0^r x^n e^{-Kx}dx,
+\end{equation}
+where $n \ge 0$ is an integer.  We can integrate it by parts to get 
+\[
+J_n = -\frac{r^n e^{-Kr}}{K} + \frac{n}{K}\int_0^r e^{-Kx}x^{n-1}dx
+\]
+and write it as a recurrence relation
+\begin{equation}\label{a1e5}
+J_n = -\frac{r^n e^{-Kr}}{K} + \frac{n}{K}J_{n-1}.
+\end{equation}
+We can solve the recurrence relation if we know the initial condition.
+\begin{equation}\label{a1e6}
+J_0 = \int_0^r e^{-Kx}dx = \frac{1}{K} - \frac{e^{-Kr}}{K}.
+\end{equation}
+We now get the following integrals
+\begin{eqnarray}
+J_1 &=& \frac{1}{K^2} - \frac{e^{-Kr}}{K}\left(r + \frac{1}{K}\right)
+        \label{a1e7} \\
+J_2 &=& \frac{2}{K^3} - \frac{e^{-Kr}}{K}\left(r^2 + \frac{2r}{K} +
+	\frac{2}{K^2}\right) \label{a1e8} \\
+J_3 &=& \frac{6}{K^4} - \frac{e^{-Kr}}{K}\left(r^3 + \frac{3r^2}{K} +
+	\frac{6r}{K^2} + \frac{6}{K^3}\right) \label{a1e9} \\
+J_4 &=& \frac{24}{K^5} - \frac{e^{-Kr}}{K}\left(r^4 + \frac{4r^3}{K} + 
+	\frac{12r^2}{K^2} + \frac{24r}{K^3} + \frac{24}{K^4}\right)
+        \label{a1e10}
+\end{eqnarray}
+We can generalize to
+\begin{equation}\label{a1e11}
+J_n = \frac{n!}{K^{n+1}} - \frac{e^{-Kr}}{K}\sum_{j=0}^n\frac{n!}{(n-j)!}
+\frac{r^{n-j}}{K^j}.
+\end{equation}
 \end{document}
