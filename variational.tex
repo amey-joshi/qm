@@ -699,7 +699,6 @@ I_9 &=& \int_{-\infty}^\infty\int_{-\infty}^\infty\frac{|\phi|^2}
 I_{10} &=& \int_{-\infty}^\infty\int_{-\infty}^\infty\frac{|\phi|^2}
         {r_2r_{12}}dV_1dV_2 \label{s5e72}
 \end{eqnarray}
-
 We will now compute each of these integrals. We first note that
 \[
 |\phi|^2 = 
@@ -721,6 +720,11 @@ I_1 &=& \frac{\alpha^6}{\pi^2 a_0^6}
 \end{eqnarray*}
 Using equation \eqref{a1e1},
 \[
+\int_0^\infty\exp\left(-\frac{2\alpha}{a_0}r_1\right)r_1^2dr_1 = 
+\frac{2!}{(2\alpha/a_0)^3} = \frac{2a_0^3}{8\alpha^3}
+\]
+so that
+\[
 I_1 = \frac{\alpha^6}{\pi^2 a_0^6}\cdot 16\pi^2 \cdot
  \frac{2a_0^3}{8\alpha^3}\frac{2a_0^3}{8\alpha^3}
 \]
@@ -728,7 +732,6 @@ or
 \begin{equation}\label{s5e73}
 I_1 = 1.
 \end{equation}
-
 We now go to $I_2$.
 \begin{eqnarray*}
 I_2 &=& \frac{\alpha^6}{\pi^2 a_0^6}
@@ -751,13 +754,11 @@ Thus,
 \begin{equation}\label{s5e74}
 I_2 = \frac{2\alpha^2}{a_0^2}.
 \end{equation}
-
 $I_3$ is similar to $I_2$ except for an interchange of $r_1$ and $r_2$ so
 that
 \begin{equation}\label{s5e75}
 I_3 = \frac{2\alpha^2}{a_0^2}.
 \end{equation}
-
 Moving to $I_4$,
 \begin{eqnarray*}
 I_4 &=& \frac{\alpha^6}{\pi^2 a_0^6}
@@ -778,7 +779,6 @@ Thus,
 \begin{equation}\label{s5e76}
 I_4 = \frac{\alpha^2}{a_0^2}.
 \end{equation}
-
 Consider
 \[
 I_5 = \int_{-\infty}^\infty\int_{-\infty}^\infty \frac{|\phi|^2}{r_{12}^2}
